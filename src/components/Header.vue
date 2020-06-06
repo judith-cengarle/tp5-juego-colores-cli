@@ -1,9 +1,9 @@
-<template>
+<template> 
     
-    <section class="game-components" >
+  <section class="game-components" >
     <div id="header">
-      <h1>The Great <br>
-      
+      <h1>The Great<br>
+          <span id="colourDisplay">{{title}}</span>
       <br>
       Guessing Game</h1>
     </div>
@@ -15,7 +15,8 @@
     export default {
         name: 'game-components',
         props: {
-
+          title : String,
+          colour : String
         }        
         
     }
@@ -28,5 +29,10 @@
     text-align: center;
     margin: 0;
     color: white;	
+    }
+    
+    #colourDisplay {
+	  font-size: 200%;
+  
     }
 </style>
