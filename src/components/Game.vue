@@ -1,8 +1,8 @@
 <template>
   <section class="game-components">
     <div id="body">
-      <Header :title="pickedColour"/>
-
+      <Header :title="pickedColour" :colour="headerColour"/>
+        
 
 
 
@@ -27,7 +27,8 @@
       return {
           colourCount : 6,
           colours : [],
-          pickedColour : null
+          pickedColour : null,
+          headerColour : ""
       }
     },
     mounted : function() {
@@ -37,6 +38,7 @@
       reset : function() {
           this.colours = this.createNewColours(this.colourCount);
           this.pickedColour = this.colours[this.pickColour()];
+          this.headerColour = "steelblue";
       },
       createNewColours : function(numbers) { 
             var arr = [];
@@ -72,10 +74,18 @@
   .game-components {
     background: #232323;
   }
-  #body {
+  
+  body {
     background: #232323;
     margin: 0;
     font-family: "Montserrat", "Avenir";
+  }
+
+  h1 {
+    font-weight: normal;
+    line-height: 1.1;
+    padding: 20px 0;
+
   }
 
 </style>
